@@ -1,0 +1,35 @@
+.Book {
+  border: 2px solid red;
+  display: flex;
+  padding: 8px 10px 4px 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgb(74, 64, 64);
+  margin: 0px 0px 20px 0px;
+}
+
+.Book img {
+  flex-basis: 20%;
+  width: 90px;
+}
+
+.bookInformatoin {
+  margin-left: 20px;
+  flex-basis: 75%;
+}
+
+.like {
+  flex-basis: 5%;
+  text-align: right;
+  margin-left: 40px;
+}
+
+#heart {
+  font-size: 20px;
+  transition: all ease-in-out 120ms;
+  padding: 10px;
+}
+
+#heart:hover {
+  color: red;
+}

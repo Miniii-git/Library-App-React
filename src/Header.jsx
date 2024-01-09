@@ -1,10 +1,17 @@
 import React from "react";
+import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <div>
-      <div>Book App</div>
-      <div>Created by Mini | React.js</div>
+    <div className={styles.Header}>
+      {/*<FontAwesomeIcon icon={faAddressBook} className={styles.iconContactApp} />*/}{" "}
+      <h1> Library App </h1>
+      <div id={styles.Mini}>
+        <a href="#" target="-blank">
+          Made By Mini
+        </a>{" "}
+        | React.js
+      </div>
     </div>
   );
 }

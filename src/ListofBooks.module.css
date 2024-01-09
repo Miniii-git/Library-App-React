@@ -1,0 +1,33 @@
+.MainPart {
+  display: flex;
+  justify-content: space-between;
+  /*margin: 10px;*/
+}
+
+.allBooksList h2 {
+  margin-bottom: 20px;
+}
+
+.favoriteList h2 {
+  margin-bottom: 20px;
+}
+
+#background {
+  padding: 5px;
+  border-radius: 6px;
+  background-color: rgb(74, 64, 64);
+  min-height: 101px;
+}
+
+#emptyList {
+  line-height: 90px;
+}
+
+.allBooksList {
+  flex-basis: 70%;
+}
+
+.favoriteList {
+  flex-basis: 25%;
+  text-align: center;
+}

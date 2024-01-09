@@ -1,0 +1,26 @@
+.FavoriteBook {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr 12px;
+  margin: 5px;
+  margin-bottom: 7px;
+  padding: 7px;
+  align-items: center;
+  border-radius: 4px;
+  background-color: rgb(143, 125, 125);
+}
+
+.FavoriteBook img {
+  width: 50px;
+  height: 65px;
+}
+
+.FavoriteBook p {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+}
+
+#CircleXmark {
+  font-size: 14px;
+  align-self: flex-start;
+}

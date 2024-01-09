@@ -1,9 +1,8 @@
 import { useState } from "react";
-
 import { books } from "./constants/mockData";
-
 import Book from "./Book";
-import FavoriteBooks from "./FavoriteCompartment";
+import FavoriteBook from "./FavoriteBook";
+import styles from "./ListofBooks.module.css";
 
 function ListofBooks({ searchMode, findedResults }) {
   const [favoriteList, setFavoriteList] = useState([]);
@@ -17,37 +16,51 @@ function ListofBooks({ searchMode, findedResults }) {
     } else {
       setFavoriteList((favoriteList) => [...favoriteList, selectedBook]);
     }
+    console.log(favoriteList);
   };
 
   return (
-    <>
-      <div>
-        <FavoriteBooks favoriteList={favoriteList} />
+    <div className={styles.MainPart}>
+      <div className={styles.allBooksList}>
+        {!searchMode ? (
+          <div>
+            <h2>List of Books</h2>
+            {books.map((book) => (
+              <Book
+                info={book}
+                key={book.id}
+                addToFavoriteList={addToFavoriteList}
+              />
+            ))}
+          </div>
+        ) : (
+          <div>
+            <h2>Search Result</h2>
+            {findedResults.map((book) => (
+              <Book
+                info={book}
+                key={book.id}
+                addToFavoriteList={addToFavoriteList}
+              />
+            ))}
+          </div>
+        )}
       </div>
-      {!searchMode ? (
-        <div>
-          <h1>List of Books</h1>
-          {books.map((book) => (
-            <Book
-              info={book}
-              key={book.id}
-              addToFavoriteList={addToFavoriteList}
-            />
+      <div className={styles.favoriteList}>
+        <h2>Favorites</h2>
+        <div id={styles.background}>
+          {!favoriteList[0] && (
+            <p id={styles.emptyList}>No Favorite Saved Yet !</p>
+          )}
+          {favoriteList.map((book) => (
+            <div key={book.id}>
+              <FavoriteBook book={book} />
+            </div>
           ))}
+          {console.log(favoriteList[0])}
         </div>
-      ) : (
-        <div>
-          <h1>Search Result</h1>
-          {findedResults.map((book) => (
-            <Book
-              info={book}
-              key={book.id}
-              addToFavoriteList={addToFavoriteList}
-            />
-          ))}
-        </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 }
 

@@ -2,6 +2,7 @@ import Header from "./Header";
 import ListofBooks from "./ListofBooks";
 import { useState } from "react";
 import { books } from "./constants/mockData";
+import styles from "./App.module.css";
 
 function App() {
   const [typingSearch, setTypingSearch] = useState("");
@@ -28,7 +29,7 @@ function App() {
       <Header />
       <br />
 
-      <div>
+      <div className={styles.search}>
         <input
           type="text"
           placeholder="Search"
