@@ -5,10 +5,17 @@ import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 
 export default function FavoriteBook({ book }) {
   return (
-    <div className={styles.FavoriteBook}>
-      <img src={book.img} />
-      <p>{book.title}</p>
-      <FontAwesomeIcon icon={faCircleXmark} id={styles.CircleXmark} />
-    </div>
+    <>
+      <div className={styles.FavoriteBook}>
+        <a href={book.link}>
+          <img src={book.img} title={book.title} />
+        </a>
+        <p>{book.title}</p>
+        <FontAwesomeIcon icon={faCircleXmark} id={styles.CircleXmark} />
+      </div>
+      <div className={styles.imageSmall}>
+        <img src={book.img} />
+      </div>
+    </>
   );
 }

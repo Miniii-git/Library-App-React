@@ -14,7 +14,9 @@ function Book({ info, addToFavoriteList }) {
   return (
     <div className={styles.Book}>
       <div className={styles.bookImage}>
-        <img src={info.img} />
+        <a href={info.link}>
+          <img src={info.img} title={info.title} />
+        </a>
       </div>
       <div className={styles.bookInformatoin}>
         <h4>{info.title}</h4>

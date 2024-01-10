@@ -3,6 +3,8 @@ import ListofBooks from "./ListofBooks";
 import { useState } from "react";
 import { books } from "./constants/mockData";
 import styles from "./App.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [typingSearch, setTypingSearch] = useState("");
@@ -29,15 +31,21 @@ function App() {
       <Header />
       <br />
 
-      <div className={styles.search}>
+      <form className={styles.search} onSubmit={searchHandler}>
         <input
           type="text"
-          placeholder="Search"
+          placeholder=" Search"
           onChange={changeHandler}
           value={typingSearch}
         />
-        <button onClick={searchHandler}>search</button>
-      </div>
+        <button>
+          <FontAwesomeIcon
+            id={styles.zarebin}
+            icon={faMagnifyingGlass}
+            type="submit"
+          />
+        </button>
+      </form>
 
       <br />
       <ListofBooks searchMode={searchMode} findedResults={findedResults} />

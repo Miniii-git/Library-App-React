@@ -1,16 +1,19 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   return (
     <div className={styles.Header}>
-      {/*<FontAwesomeIcon icon={faAddressBook} className={styles.iconContactApp} />*/}{" "}
-      <h1> Library App </h1>
+      <h1>
+        <FontAwesomeIcon icon={faBookOpen} /> Library App{" "}
+      </h1>
       <div id={styles.Mini}>
         <a href="#" target="-blank">
           Made By Mini
         </a>{" "}
-        | React.js
+        <span>| React.js</span>
       </div>
     </div>
   );

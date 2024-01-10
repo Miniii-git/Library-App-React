@@ -5,6 +5,7 @@
 }
 
 .allBooksList h2 {
+  margin-left: 5px;
   margin-bottom: 20px;
 }
 
@@ -30,4 +31,52 @@
 .favoriteList {
   flex-basis: 25%;
   text-align: center;
+}
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: 20px;
+  }
+  .MainPart {
+    flex-direction: column-reverse;
+  }
+  .sectionForFavoritesBooks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+}
+
+@media (max-width: 750px) {
+  #emptyList {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  #emptyList {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .allBooksList {
+    flex-basis: 78%;
+  }
+  .favoriteList {
+    flex-basis: 20%;
+  }
+
+  #emptyList {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  #emptyList {
+    font-size: 16px;
+  }
 }

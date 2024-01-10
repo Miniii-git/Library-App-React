@@ -17,6 +17,9 @@
   margin-left: 20px;
   flex-basis: 75%;
 }
+.bookInformatoin p {
+  font-size: 14px;
+}
 
 .like {
   flex-basis: 5%;
@@ -30,6 +33,11 @@
   padding: 10px;
 }
 
-#heart:hover {
-  color: red;
+@media (max-width: 500px) {
+  .bookInformatoin h4 {
+    font-size: 14px;
+  }
+  .bookInformatoin p {
+    font-size: 12px;
+  }
 }

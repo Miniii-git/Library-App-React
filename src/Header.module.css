@@ -17,6 +17,7 @@
 
 #Mini {
   font-size: 16px;
+  font-weight: bold;
 }
 
 #Mini a {
@@ -26,4 +27,31 @@
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 14px;
+  transition: all ease-in-out 150ms;
+  font-weight: bold;
+}
+
+#Mini a:hover {
+  box-shadow: 0px 0px 5px white;
+}
+
+@media (max-width: 500px) {
+  .Header h1 {
+    font-size: 1.5rem;
+  }
+  #Mini {
+    font-size: 13px;
+  }
+  #Mini a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .Header h1 {
+    font-size: 1.5rem;
+  }
+  #Mini a {
+    display: block;
+  }
 }

@@ -50,14 +50,15 @@ function ListofBooks({ searchMode, findedResults }) {
         <h2>Favorites</h2>
         <div id={styles.background}>
           {!favoriteList[0] && (
-            <p id={styles.emptyList}>No Favorite Saved Yet !</p>
+            <p id={styles.emptyList}>No Favorite Saved Yet!</p>
           )}
-          {favoriteList.map((book) => (
-            <div key={book.id}>
-              <FavoriteBook book={book} />
-            </div>
-          ))}
-          {console.log(favoriteList[0])}
+          <div className={styles.sectionForFavoritesBooks}>
+            {favoriteList.map((book) => (
+              <div key={book.id}>
+                <FavoriteBook book={book} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
