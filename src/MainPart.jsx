@@ -2,7 +2,7 @@ import { useState } from "react";
 import { books } from "./constants/mockData";
 import Book from "./Book";
 import FavoriteBook from "./FavoriteBook";
-import styles from "./ListofBooks.module.css";
+import styles from "./MainPart.module.css";
 
 function ListofBooks({ searchMode, findedResults }) {
   const [favoriteList, setFavoriteList] = useState([]);

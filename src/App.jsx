@@ -1,10 +1,9 @@
 import Header from "./Header";
-import ListofBooks from "./ListofBooks";
+import Search from "./Search";
+import MainPart from "./MainPart";
+
 import { useState } from "react";
 import { books } from "./constants/mockData";
-import styles from "./App.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [typingSearch, setTypingSearch] = useState("");
@@ -30,25 +29,13 @@ function App() {
     <>
       <Header />
       <br />
-
-      <form className={styles.search} onSubmit={searchHandler}>
-        <input
-          type="text"
-          placeholder=" Search"
-          onChange={changeHandler}
-          value={typingSearch}
-        />
-        <button>
-          <FontAwesomeIcon
-            id={styles.zarebin}
-            icon={faMagnifyingGlass}
-            type="submit"
-          />
-        </button>
-      </form>
-
+      <Search
+        typingSearch={typingSearch}
+        changeHandler={changeHandler}
+        searchHandler={searchHandler}
+      />
       <br />
-      <ListofBooks searchMode={searchMode} findedResults={findedResults} />
+      <MainPart searchMode={searchMode} findedResults={findedResults} />
     </>
   );
 }

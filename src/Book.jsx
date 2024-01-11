@@ -11,6 +11,7 @@ function Book({ info, addToFavoriteList }) {
     setLiked((liked) => !liked);
   };
   const [liked, setLiked] = useState(false);
+
   return (
     <div className={styles.Book}>
       <div className={styles.bookImage}>
