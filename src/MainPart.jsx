@@ -1,22 +1,24 @@
 import { useState } from "react";
-import { books } from "./constants/mockData";
 import Book from "./Book";
 import FavoriteBook from "./FavoriteBook";
 import styles from "./MainPart.module.css";
 
-function ListofBooks({ searchMode, findedResults }) {
+function ListofBooks({ searchMode, findedResults, newData, setNewData }) {
   const [favoriteList, setFavoriteList] = useState([]);
 
   const addToFavoriteList = (id) => {
-    const selectedBook = books.find((book) => book.id === id);
+    const selectedBook = newData.find((book) => book.id === id);
+
     if (favoriteList.find((book) => book.id === selectedBook.id)) {
       setFavoriteList(
         favoriteList.filter((book) => book.id !== selectedBook.id)
       );
+      selectedBook.status = 0;
     } else {
       setFavoriteList((favoriteList) => [...favoriteList, selectedBook]);
+      selectedBook.status = 1;
     }
-    console.log(favoriteList);
+    console.log(selectedBook.status);
   };
 
   return (
@@ -25,7 +27,7 @@ function ListofBooks({ searchMode, findedResults }) {
         {!searchMode ? (
           <div>
             <h2>List of Books</h2>
-            {books.map((book) => (
+            {newData.map((book) => (
               <Book
                 info={book}
                 key={book.id}
@@ -55,7 +57,10 @@ function ListofBooks({ searchMode, findedResults }) {
           <div className={styles.sectionForFavoritesBooks}>
             {favoriteList.map((book) => (
               <div key={book.id}>
-                <FavoriteBook book={book} />
+                <FavoriteBook
+                  book={book}
+                  addToFavoriteList={addToFavoriteList}
+                />
               </div>
             ))}
           </div>

@@ -5,7 +5,10 @@ import MainPart from "./MainPart";
 import { useState } from "react";
 import { books } from "./constants/mockData";
 
+const DataWithStatus = books.map((book) => ({ ...book, status: 0 }));
+
 function App() {
+  const [newData, setNewData] = useState(DataWithStatus);
   const [typingSearch, setTypingSearch] = useState("");
   const [findedResults, setFindedResults] = useState([]);
   const [searchMode, setSearchMode] = useState(false);
@@ -15,7 +18,7 @@ function App() {
   const searchHandler = (event) => {
     event.preventDefault();
     const regex = new RegExp(typingSearch, "gi");
-    const matchedItems = books.filter((book) => book.title.match(regex));
+    const matchedItems = newData.filter((book) => book.title.match(regex));
     setFindedResults(matchedItems);
     setTypingSearch("");
     if (typingSearch) {
@@ -35,7 +38,12 @@ function App() {
         searchHandler={searchHandler}
       />
       <br />
-      <MainPart searchMode={searchMode} findedResults={findedResults} />
+      <MainPart
+        searchMode={searchMode}
+        findedResults={findedResults}
+        newData={newData}
+        setNewData={setNewData}
+      />
     </>
   );
 }
