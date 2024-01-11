@@ -1,13 +1,12 @@
 .Header {
   color: white;
-  border: 3px solid gray;
+  border: 3px solid none;
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   background-color: rgb(143, 125, 125);
-  border: none;
 }
 
 .Header h1 {
