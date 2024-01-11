@@ -22,6 +22,11 @@ export default function FavoriteBook({ book, addToFavoriteList }) {
       </div>
       <div className={styles.imageSmall}>
         <img src={book.img} />
+        <FontAwesomeIcon
+          icon={faCircleXmark}
+          id={styles.CircleXmark}
+          onClick={deleteHandler}
+        />
       </div>
     </>
   );

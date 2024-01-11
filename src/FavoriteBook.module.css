@@ -26,6 +26,14 @@
   align-self: flex-start;
 }
 
+#CircleXmark:hover {
+  color: black;
+}
+
+#CircleXmark:active {
+  color: red;
+}
+
 .imageSmall {
   display: none;
 }
@@ -64,5 +72,11 @@
     margin: 5px;
     margin-bottom: 0px;
     margin-top: 8px;
+  }
+
+  #CircleXmark {
+    position: relative;
+    top: -67px;
+    left: -6px;
   }
 }
