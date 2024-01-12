@@ -27,7 +27,9 @@ function Book({ info, addToFavoriteList }) {
           id={styles.heart}
           icon={info.status === 1 ? heartSolid : heartregular}
           onClick={likeHandler}
-          style={{ color: info.status === 1 ? "red" : "white" }}
+          style={{
+            color: info.status === 1 ? "#99FF66" : "white",
+          }}
         />
       </div>
     </div>

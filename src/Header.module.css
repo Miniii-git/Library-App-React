@@ -6,17 +6,19 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: rgb(143, 125, 125);
+  background-color: rgba(0, 0, 0, 0.236);
 }
 
 .Header h1 {
   font-size: 2rem;
   font-weight: 700;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.504);
 }
 
 #bookIcon {
   position: relative;
   top: 5px;
+  color: #99ff66;
 }
 
 #Mini {
@@ -26,8 +28,8 @@
 
 #Mini a {
   border-radius: 2px;
-  background-color: rgb(74, 64, 64);
-  padding: 0px 4px 2px 4px;
+  background-color: rgba(13, 0, 22, 0.319);
+  padding: 0px 6px 4px 6px;
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 14px;
