@@ -34,6 +34,7 @@
 }
 
 #heart:hover {
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.423));
 }
 
 @media (max-width: 500px) {

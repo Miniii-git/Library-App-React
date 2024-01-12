@@ -3,6 +3,8 @@ import styles from "./Book.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as heartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as heartregular } from "@fortawesome/free-regular-svg-icons";
+import { faStar as starSolid } from "@fortawesome/free-solid-svg-icons";
+import { faStar as starregular } from "@fortawesome/free-regular-svg-icons";
 
 function Book({ info, addToFavoriteList }) {
   const likeHandler = () => {
@@ -25,12 +27,21 @@ function Book({ info, addToFavoriteList }) {
       <div className={styles.like}>
         <FontAwesomeIcon
           id={styles.heart}
-          icon={info.status === 1 ? heartSolid : heartregular}
+          icon={info.status === 1 ? starSolid : starregular}
           onClick={likeHandler}
           style={{
             color: info.status === 1 ? "#99FF66" : "white",
           }}
         />
+
+        {/*<FontAwesomeIcon
+          id={styles.heart}
+          icon={info.status === 1 ? heartSolid : heartregular}
+          onClick={likeHandler}
+          style={{
+            color: info.status === 1 ? "#99FF66" : "white",
+          }}
+        />*/}
       </div>
     </div>
   );

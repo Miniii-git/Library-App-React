@@ -31,13 +31,11 @@ function App() {
   return (
     <>
       <Header />
-      <br />
       <Search
         typingSearch={typingSearch}
         changeHandler={changeHandler}
         searchHandler={searchHandler}
       />
-      <br />
       <MainPart
         searchMode={searchMode}
         findedResults={findedResults}
